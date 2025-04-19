@@ -1,6 +1,8 @@
 FROM archlinux:latest
 # add python
 RUN pacman -Syy --noconfirm python uv wasmer
+# warm wasmer
+RUN wasmer run -q --no-tty python/python -- -c "print(1+1)"
 # copy sources
 ADD ./mcp-wasmpython-runner /opt/mcp-wasmpython-runner
 WORKDIR /opt/mcp-wasmpython-runner
