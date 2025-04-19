@@ -1,0 +1,8 @@
+services:
+  mcp-wasmpython-runner:
+    build:
+      dockerfile: Dockerfile
+    restart: always
+    container_name: mcp-wasmpython-runner
+    ports:
+      - 8000:8000
